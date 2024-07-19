@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Scheme ToolKit</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="../index.html"><img src="../assets/images/logo.webp"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="../index.html">Logout</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Government Scheme ToolKit</h1>
+            <p>This website allows you to find all your required schemes in 
+                one place, so that you do not need to search for it in various other places.
+            </p>
+            <a href="./main/login.html" class="main-button">Login to start searching!</a>
+        </div>
+    </section>
+    <section class="container">
+        <h2>Government Schemes Finder</h2>
+        <form id="search-form" action="/search" method="POST">
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="category">Category:</label>
+              <select id="category" name="category" required>
+                <option value="general">General</option>
+                <option value="obc">OBC</option>
+                <option value="sc_st">SC/ST</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="religion">Religion:</label>
+              <input type="text" id="religion" name="religion" required>
+            </div>
+            <div class="form-group">
+              <label for="marital_status">Marital Status:</label>
+              <select id="maritalstatus" name="maritalstatus" required>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="income">Income:</label>
+              <select id="income" name="income" required>
+                <option value="less_than_5">Less than 5 LPA</option>
+                <option value="more_than_5">More than 5 LPA</option>
+                <option value="more_than_10">More than 10 LPA</option>
+                <option value="between_10_20">Between 10 LPA to 20 LPA</option>
+                <option value="above_20">Above 20 LPA</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="state">State:</label>
+              <select id="state" name="state" required>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Odisha">Odisha</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Uttarakhand">Uttarakhand</option>
+          <option value="West Bengal">West Bengal</option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+          <option value="Daman and Diu">Daman and Diu</option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Puducherry">Puducherry</option>
+              </select>
+            </div>
+            <button type="submit">Search</button>
+          </form>
+          <div id="search-results"></div> <!-- Container to display search results -->
+    </section>
+    <script src="./dashboard.js"></script>
+</body>
+</html>

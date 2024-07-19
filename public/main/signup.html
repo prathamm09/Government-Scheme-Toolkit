@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>Register Now!</title> 
+	<link rel="stylesheet"
+		href="./registration_style.css"> 
+</head> 
+
+<body> 
+	<section class="header">
+		<nav>
+			<a href="./login.html"><img src="../assets/images/logo.webp"></a>
+		</nav>
+	</section>
+	<div class="main"> 
+		<h1>User Registration</h1> 
+		<h3>Enter your registration details</h3> 
+		<form action="/signup" method="post"> 
+			<label for="username"> 
+				Username: 
+			</label> 
+			<input type="text"
+				id="username"
+				name="username"
+				placeholder="Enter your Username" required> 
+
+			<label for="email"> 
+				Email: 
+			</label> 
+			<input type="email"
+				id="email"
+				name="email"
+				placeholder="Enter your Email" required> 
+
+			<label for="password"> 
+				Password: 
+			</label> 
+			<input type="password"
+				id="password"
+				name="password"
+				placeholder="Enter your Password" required> 
+
+			<div class="wrap"> 
+				<button type="submit"
+						onclick="solve()"> 
+					Register 
+				</button> 
+			</div> 
+		</form> 
+		<p>Already registered? 
+			<a href="./login.html"
+			style="text-decoration: none;"> 
+				Login here 
+			</a> 
+		</p> 
+	</div> 
+</body> 
+
+</html>

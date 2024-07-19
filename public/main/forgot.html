@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="./forgot_password_style.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="./login.html"><img src="../assets/images/logo.webp"></a>
+        </nav>
+    </section>
+    <div class="main">
+        <h1>Forgot Password</h1>
+        <h3>Enter your email to reset your password</h3>
+        <form id="forgotForm" action="/forgot" method="post" onsubmit="sendResetRequest(event)">
+            <label for="email">
+                Email:
+            </label>
+            <input type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your Email" required>
+            <div class="wrap">
+                <button type="submit">
+                    Reset Password
+                </button>
+            </div>
+        </form>
+        <p>Remember your password?
+            <a href="./login.html" style="text-decoration: none;">
+                Login here
+            </a>
+        </p>
+        <!-- Message popup container -->
+        <div id="messagePopup" class="message-popup"></div>
+    </div>
+    <!-- JavaScript to handle AJAX request and message popup -->
+    <script>
+        function sendResetRequest(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/forgot');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function () {
+                const response = JSON.parse(xhr.responseText);
+                showMessage(response.message);
+            };
+            xhr.onerror = function () {
+                showMessage('Error resetting password');
+            };
+            xhr.send(JSON.stringify({ email: email }));
+        }
+
+        function showMessage(message) {
+            const messagePopup = document.getElementById('messagePopup');
+            messagePopup.textContent = message;
+            messagePopup.style.display = 'block';
+            // Hide the message after some time (e.g., 5 seconds)
+            setTimeout(function () {
+                messagePopup.style.display = 'none';
+            }, 5000); // 5000 milliseconds = 5 seconds
+        }
+    </script>
+</body>
+</html>
